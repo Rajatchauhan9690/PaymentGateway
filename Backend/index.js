@@ -27,6 +27,11 @@ app.post("/orders", async (req, res) => {
     amount: req.body.amount,
     currency: req.body.currency,
     receipt: "receipt#1",
+    notes: {
+      customer_name: req.body.name,
+      customer_email: req.body.email,
+    },
+    partial_payment: false,
     payment_capture: 1,
   };
 
